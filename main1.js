@@ -10,3 +10,7 @@ function loginGovBr() {
         
         const authUrl = `https://acesso.gov.br/authorize?response_type=code&client_id=${clientId}&scope=${scope}&redirect_uri=${redirectUri}`;
 };
+function loginGovBr() {
+    window.open("https://acesso.gov.br/", "_blank");
+}
+//Essa merda não está linkando com o GOV.BR talvez porque eu seja burro....
