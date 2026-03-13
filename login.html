@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Médico - Medigital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-100 h-screen flex items-center justify-center">
+
+    <div class="flex w-full max-w-4xl bg-white shadow-2xl rounded-2xl overflow-hidden m-4">
+        
+        <div class="hidden md:flex md:w-1/2 bg-blue-700 p-12 flex-col justify-between text-white">
+            <div>
+                <h1 class="text-3xl font-bold italic"><i class="fas fa-stethoscope mr-2"></i>Medigital</h1>
+                <p class="mt-4 text-blue-100 text-lg">Acesso restrito a profissionais de saúde autorizados.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-shield-alt text-2xl text-blue-300"></i>
+                    <span class="text-sm">Ambiente criptografado e em conformidade com a LGPD.</span>
+                </div>
+                <p class="text-xs text-blue-200">© 2026 Medigital Digital Health Solutions.</p>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 p-8 md:p-12">
+            <div class="text-center md:text-left mb-8">
+                <h2 class="text-2xl font-bold text-gray-800">Bem-vindo de volta</h2>
+                <p class="text-gray-500">Insira suas credenciais para acessar o painel.</p>
+            </div>
+
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700">CRM / Registro Profissional</label>
+                    <div class="relative mt-1">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                            <i class="fas fa-id-card"></i>
+                        </span>
+                        <input type="text" placeholder="000000-UF" 
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between">
+                        <label class="block text-sm font-semibold text-gray-700">Senha</label>
+                        <a href="#" class="text-xs text-blue-600 hover:underline">Esqueceu a senha?</a>
+                    </div>
+                    <div class="relative mt-1">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" placeholder="••••••••" 
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" id="remember" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="remember" class="ml-2 text-sm text-gray-600">Manter conectado neste dispositivo</label>
+                </div>
+
+                <button type="submit" 
+                    class="w-full bg-blue-700 text-white py-3 rounded-lg font-bold text-lg hover:bg-blue-800 shadow-lg hover:shadow-blue-200 transition-all transform active:scale-[0.98]">
+                    Acessar Plataforma
+                </button>
+
+                <div class="relative flex py-2 items-center">
+                    <div class="flex-grow border-t border-gray-200"></div>
+                    <span class="flex-shrink mx-4 text-gray-400 text-xs uppercase">Suporte</span>
+                    <div class="flex-grow border-t border-gray-200"></div>
+                </div>
+
+                <button type="button" 
+                    class="w-full border-2 border-gray-200 text-gray-700 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+                    <i class="fas fa-certificate text-blue-600"></i>
+                    Entrar com Certificado Digital
+                    <div class="relative flex py-2 items-center">
+    <div class="flex-grow border-t border-gray-200"></div>
+    <span class="flex-shrink mx-4 text-gray-400 text-xs uppercase">Ou acesse com</span>
+    <div class="flex-grow border-t border-gray-200"></div>
+</div>
+
+<button type="button" onclick="loginGovBr()"
+    class="w-full bg-[#004b82] text-white py-3 rounded-lg font-bold flex items-center justify-center gap-3 hover:bg-[#003d6a] transition shadow-md">
+    <img src="https://www.gov.br/governodigital/pt-br/estrategia-de-governo-digital/logo-gov-br.png" alt="Gov.br" class="h-6 bg-white rounded px-1">
+    Entrar com gov.br
+</button>
+
+<button type="button" 
+    class="w-full mt-4 border border-gray-300 text-gray-600 py-2 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+    <i class="fas fa-certificate text-blue-600"></i>
+    Certificado Digital Cloud
+</button>
+                </button>
+            </form>
+        </div>
+    </div>
+<script src="main1.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medigital- Relatorio do paciente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <header class="bg-blue-700 text-white p-4 shadow-md flex justify-between items-center">
+        <h1 class="text-xl font-bold italic"><i class="fas fa-stethoscope mr-2"></i>MedConsult 2026</h1>
+        <div class="flex items-center gap-4">
+            <span>Uusario</span>
+            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white">
+                <i class="fas fa-user-md"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex h-screen">
+        <aside class="w-1/4 bg-white border-r p-4 overflow-y-auto hidden md:block">
+            <h2 class="text-gray-600 font-semibold mb-4 uppercase text-xs tracking-wider">Histórico do Paciente</h2>
+            <div class="space-y-3">
+                <div class="p-3 bg-blue-50 rounded-lg border border-blue-100 cursor-pointer">
+                    <p class="text-sm font-bold text-blue-800">12/01/2026 - Rotina</p>
+                    <p class="text-xs text-gray-600">Pressão 12/8, queixa de insônia.</p>
+                </div>
+                <div class="p-3 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 cursor-pointer transition">
+                    <p class="text-sm font-bold text-gray-700">05/11/2025 - Retorno</p>
+                    <p class="text-xs text-gray-600">Acompanhamento pós-cirúrgico.</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-6 overflow-y-auto">
+            <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
+                <div class="bg-gray-100 p-4 border-b flex justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold">Paciente: João das Neves</h3>
+                        <p class="text-sm text-gray-500">Idade: 34 anos | CPF: 000.000.000-00</p>
+                    </div>
+                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm self-center">Em atendimento</span>
+                </div>
+
+                <form class="p-6 space-y-6">
+                    <section>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Queixa Principal (QP)</label>
+                        <input type="text" placeholder="Ex: Dor abdominal há 3 dias" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </section>
+
+                    <section>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">História da Moléstia Atual (HMA)</label>
+                        <textarea rows="4" placeholder="Descreva o início, localização, intensidade e fatores de melhora/piora..." class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                    </section>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">PA (mmHg)</label>
+                            <input type="text" placeholder="120/80" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Temp (°C)</label>
+                            <input type="text" placeholder="36.5" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Peso (Kg)</label>
+                            <input type="text" placeholder="75.0" class="w-full p-2 border rounded mt-1">
+                        </div>
+                    </div>
+
+                    <section class="bg-red-50 p-4 rounded-lg border border-red-100">
+                        <label class="block text-sm font-bold text-red-700 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Alergias e Alertas</label>
+                        <textarea rows="2" class="w-full p-2 border border-red-200 rounded outline-none focus:ring-2 focus:ring-red-400" placeholder="Ex: Alérgico a Dipirona"></textarea>
+                    </section>
+
+                    <div class="flex justify-end gap-3 pt-4 border-t">
+                        <button type="button" class="px-6 py-2 border rounded-lg text-gray-600 hover:bg-gray-100 font-semibold transition">Pausar</button>
+                        
+                    <button type="submit" class="px-6 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 font-bold shadow-lg transition">Finalizar e Gerar Receita</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

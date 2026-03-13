@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Paciente - Medigital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="min-h-screen flex flex-col">
+        <nav class="bg-white border-b p-4 flex justify-between items-center px-8">
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-blue-700 font-bold text-lg"><i class="fas fa-arrow-left mr-2"></i> Voltar</a>
+                <h1 class="text-xl font-semibold text-gray-800 border-l pl-4">Novo Cadastro</h1>
+            </div>
+            <span class="text-sm text-gray-500 italic">Campos com * são obrigatórios</span>
+        </nav>
+
+        <main class="flex-1 p-6 md:p-12">
+            <div class="max-w-5xl mx-auto bg-white shadow-xl rounded-2xl p-8">
+                <form class="space-y-8">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="md:col-span-4 border-b pb-2">
+                            <h2 class="text-blue-700 font-bold uppercase text-sm tracking-widest">1. Informações Pessoais</h2>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700">Nome Completo *</label>
+                            <input type="text" placeholder="Nome do paciente" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Data de Nascimento *</label>
+                            <input type="date" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Sexo Biológico *</label>
+                            <select class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                                <option>Masculino</option>
+                                <option>Feminino</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">CPF *</label>
+                            <input type="text" placeholder="000.000.000-00" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">RG / Documento</label>
+                            <input type="text" placeholder="Número do doc" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700">Nome da Mãe</label>
+                            <input type="text" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-4">
+                        <div class="md:col-span-4 border-b pb-2">
+                            <h2 class="text-blue-700 font-bold uppercase text-sm tracking-widest">2. Contacto e Localização</h2>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Telemóvel/Celular *</label>
+                            <input type="tel" placeholder="(00) 00000-0000" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700">E-mail</label>
+                            <input type="email" placeholder="paciente@exemplo.com" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">CEP / Código Postal</label>
+                            <input type="text" placeholder="00000-000" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+
+                        <div class="md:col-span-3">
+                            <label class="block text-sm font-medium text-gray-700">Endereço Residencial</label>
+                            <input type="text" placeholder="Rua, Número, Bairro" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Cidade/Estado</label>
+                            <input type="text" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                        <div class="md:col-span-3 border-b pb-2">
+                            <h2 class="text-blue-700 font-bold uppercase text-sm tracking-widest">3. Plano de Saúde / Convénio</h2>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Operadora</label>
+                            <select class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                                <option>Particular</option>
+                                <option>Unimed</option>
+                                <option>Bradesco Saúde</option>
+                                <option>SNS (Público)</option>
+                            </select>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700">Número da Carteira / Beneficiário</label>
+                            <input type="text" class="mt-1 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-8 border-t border-gray-100">
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <input type="checkbox" id="termos" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <label for="termos">Paciente aceita os termos de consentimento e proteção de dados (LGPD).</label>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <button type="button" class="px-8 py-3 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 transition">Limpar</button>
+                            <button type="submit" class="px-8 py-3 bg-blue-700 text-white rounded-xl font-bold hover:bg-blue-800 shadow-lg shadow-blue-200 transition">Salvar Cadastro</button>
+                            <button type="button" class="px-8 py-3 bg-blue-700 text-white rounded-xl font-bold hover:bg-blue-800 shadow-lg shadow-blue-200 transition">Voltar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
