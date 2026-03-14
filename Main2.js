@@ -161,3 +161,52 @@ function buscarPacienteNoSistema(cpf) {
     };
     return bancoExemplo[cpf] || null;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Seleção dos campos (usando placeholders como referência do seu HTML)
+    const campoCep = document.querySelector('input[placeholder="00000-000"]');
+    const campoEndereco = document.querySelector('input[placeholder="Rua, Número, Bairro"]');
+    // O campo Cidade/Estado é o último input antes da seção de convênio
+    const campoCidadeEstado = document.querySelector('input[placeholder="Rua, Número, Bairro"]').parentElement.nextElementSibling.querySelector('input');
+
+    // 2. Função de Busca de CEP
+    if (campoCep) {
+        campoCep.addEventListener('blur', async () => {
+            // Remove caracteres não numéricos
+            const cep = campoCep.value.replace(/\D/g, '');
+
+            if (cep.length === 8) {
+                try {
+                    // Feedback visual de carregamento
+                    campoEndereco.value = "Buscando...";
+                    
+                    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                    const dados = await response.json();
+
+                    if (!dados.erro) {
+                        campoEndereco.value = `${dados.logradouro}, ${dados.bairro}`;
+                        campoCidadeEstado.value = `${dados.localidade} / ${dados.uf}`;
+                    } else {
+                        alert("CEP não encontrado.");
+                        limparCamposEndereco();
+                    }
+                } catch (error) {
+                    console.error("Erro ao buscar CEP:", error);
+                    alert("Erro ao buscar o CEP. Verifique sua conexão.");
+                }
+            }
+        });
+    }
+
+    function limparCamposEndereco() {
+        campoEndereco.value = "";
+        campoCidadeEstado.value = "";
+    }
+
+    // --- Mantenha aqui as outras lógicas (Máscaras, Validar Sinais Vitais, etc) ---
+    // Máscara simples para o CEP enquanto digita
+    campoCep.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, "");
+        v = v.replace(/^(\d{5})(\d)/, "$1-$2");
+        e.target.value = v.slice(0, 9);
+    });
+});

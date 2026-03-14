@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Moderador - Medigital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 min-h-screen flex">
+
+    <aside class="w-64 bg-slate-900 text-white flex flex-col shadow-2xl hidden md:flex">
+        <div class="p-6 border-b border-slate-800">
+            <h1 class="text-xl font-bold tracking-wider text-blue-400"><i class="fas fa-user-shield mr-2"></i>ADMIN</h1>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="#" class="flex items-center gap-3 p-3 bg-blue-600 rounded-xl transition">
+                <i class="fas fa-user-md w-5"></i> Gestão de Médicos
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:bg-slate-800 rounded-xl transition text-slate-400">
+                <i class="fas fa-hospital w-5"></i> Unidades
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:bg-slate-800 rounded-xl transition text-slate-400">
+                <i class="fas fa-chart-line w-5"></i> Relatórios Geral
+            </a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-screen overflow-hidden">
+        
+        <header class="bg-white p-4 px-8 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold text-slate-700">Controle de Profissionais</h2>
+            <button onclick="abrirModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold flex items-center gap-2 transition shadow-md">
+                <i class="fas fa-plus"></i> Novo Médico
+            </button>
+        </header>
+
+        <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                    <p class="text-slate-500 text-xs uppercase font-bold">Total de Médicos</p>
+                    <h3 class="text-2xl font-bold">48</h3>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-green-600">
+                    <p class="text-slate-500 text-xs uppercase font-bold">Ativos Agora</p>
+                    <h3 class="text-2xl font-bold">12</h3>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-orange-500">
+                    <p class="text-slate-500 text-xs uppercase font-bold">Pendentes</p>
+                    <h3 class="text-2xl font-bold">03</h3>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 text-slate-500 text-xs font-bold uppercase border-b">
+                        <tr>
+                            <th class="px-6 py-4">Profissional</th>
+                            <th class="px-6 py-4">CRM / Especialidade</th>
+                            <th class="px-6 py-4">Acesso</th>
+                            <th class="px-6 py-4">Status</th>
+                            <th class="px-6 py-4">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100" id="listaMedicos">
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold">DR</div>
+                                    <div>
+                                        <p class="font-bold text-slate-800">Ricardo Oliveira</p>
+                                        <p class="text-xs text-slate-500">ricardo@medigital.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-slate-600">
+                                <b>987654-MG</b><br>Neurologista
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="bg-slate-100 text-slate-700 px-2 py-1 rounded text-[10px] font-bold uppercase">Acesso: Médico</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-green-500 flex items-center gap-1 text-xs font-bold"><i class="fas fa-circle text-[8px]"></i> Ativo</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="text-slate-400 hover:text-blue-600 transition"><i class="fas fa-edit"></i></button>
+                                <button class="text-slate-400 hover:text-red-600 transition ml-3"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div id="modalMedico" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            <div class="bg-slate-900 p-6 text-white flex justify-between items-center">
+                <h3 class="font-bold text-lg italic">Credenciar Novo Médico</h3>
+                <button onclick="fecharModal()" class="text-slate-400 hover:text-white"><i class="fas fa-times"></i></button>
+            </div>
+             <div id="modalMedico" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            <div class="bg-slate-900 p-6 text-white flex justify-between items-center">
+                <h3 class="font-bold text-lg italic">criar cadastro de médico</h3>
+            <form id="formAdminMedico" class="p-8 space-y-5">
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase">Nome Completo</label>
+                    <input type="text" id="m_nome" required class="w-full mt-1 p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase">CRM</label>
+                        <input type="text" id="m_crm" required placeholder="000000" class="w-full mt-1 p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase">Acesso</label>
+                        <select id="m_acesso" class="w-full mt-1 p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition">
+                            <option value="medico">Médico Padrão</option>
+                            <option value="moderador">Moderador</option>
+                            <option value="administrativo">Financeiro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase">E-mail de Ativação</label>
+                    <input type="email" id="m_email" required class="w-full mt-1 p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition">
+                </div>
+
+                <div class="pt-4 flex gap-3">
+                    <button type="button" onclick="fecharModal()" class="flex-1 py-3 font-bold text-slate-500 hover:bg-slate-100 rounded-xl transition">Cancelar</button>
+                    <button type="submit" class="flex-1 py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition">Salvar Cadastro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
